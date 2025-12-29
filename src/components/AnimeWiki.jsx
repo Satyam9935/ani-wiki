@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ExternalLink, Star, Zap, Heart } from 'lucide-react';
+import CharacterChat from './CharacterChat';
 
 const AnimeWiki = ({ character }) => {
   if (!character) return null;
@@ -13,12 +14,13 @@ const AnimeWiki = ({ character }) => {
       className="relative w-full max-w-5xl h-auto md:h-[600px] bg-[#0a0a0a] rounded-[2rem] border border-white/10 shadow-2xl flex flex-col md:flex-row overflow-hidden"
       style={{
         boxShadow: "0 0 50px -12px rgba(168, 85, 247, 0.25)" // Subtle Purple Glow
+        
       }}
     >
       
       {/* 1. LEFT SIDE: IMAGE CONTAINER */}
       <div className="relative w-full md:w-[45%] h-[400px] md:h-full bg-black group">
-        {/* The Image - set to COVER but strictly contained in this box */}
+        
         <img 
           src={character.images?.jpg?.large_image_url} 
           alt={character.name} 
@@ -86,7 +88,7 @@ const AnimeWiki = ({ character }) => {
         </a>
 
       </div>
-
+        <CharacterChat character={character} />
     </motion.div>
   );
 };
